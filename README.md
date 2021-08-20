@@ -16,7 +16,7 @@ Funcionalidades:
     - Antes de cadastrar, valida se o valor já existe
 - Listagem de categorias cadastradas
 
-
+---
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
@@ -26,7 +26,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Insomnia
 - Visual Studio Code
 
-
+---
 ## 🚀 Como executar o projeto
 
 Após clonar o projeto no local desejado, execute o seguinte comando dentro do projeto:
@@ -35,13 +35,13 @@ Após clonar o projeto no local desejado, execute o seguinte comando dentro do p
 yarn install
 ```
 
-
+---
 ## 🎲 Rodando o Back End (servidor)
 
 ```bash
 # Abrir terminal e executar
 yarn dev
 ```
-
+---
 ## ℹ Dúvidas
 [Entre em contato!](https://www.linkedin.com/in/vitorroliveiraa/)
