@@ -15,6 +15,8 @@ Funcionalidades:
 - Cadastro de categorias
     - Antes de cadastrar, valida se o valor já existe
 - Listagem de categorias cadastradas
+- Cadastro de especificações
+    - Antes de cadastrar, valida se o valor já existe
 
 ---
 ## 🛠 Tecnologias
