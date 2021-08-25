@@ -1,5 +1,6 @@
 import express from "express";
 
+// Quando o path termina com nome de pasta, automaticamente pega index
 import { router } from "./routes";
 
 const app = express();
