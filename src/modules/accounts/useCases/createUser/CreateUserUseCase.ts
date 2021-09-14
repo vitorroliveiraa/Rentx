@@ -1,6 +1,7 @@
 import { hash } from "bcryptjs";
 import { inject, injectable } from "tsyringe";
 
+import { AppError } from "../../../../errors/AppError";
 import { ICreateUserDTO } from "../../dtos/ICreateUsersDTO";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
@@ -20,7 +21,7 @@ class CreateCategoryUseCase {
         const userAlreadyExists = this.usersRepository.findByEmail(email);
 
         if (userAlreadyExists) {
-            throw new Error("This email is in use!");
+            throw new AppError("This email is in use!");
         }
 
         const passwordHash = await hash(password, 8);
