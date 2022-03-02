@@ -21,6 +21,8 @@
         "prettier"
     ],
     "rules": {
+        // "quotes": "off",
+        // "@typescript-eslint/quotes": ["error"],
         "camelcase": "off",
         "import/no-unresolved": "error",
         "@typescript-eslint/naming-convention": [

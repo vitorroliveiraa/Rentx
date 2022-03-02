@@ -1,14 +1,18 @@
 import "reflect-metadata";
+
 import "express-async-errors";
+
 import express, { Request, Response, NextFunction } from "express";
 import swaggerUi from "swagger-ui-express";
 
 // Quando o path termina com nome de pasta, automaticamente pega index
+
 import { AppError } from "./errors/AppError";
 import { router } from "./routes";
 import swaggerFile from "./swagger.json";
 
 import "./database";
+
 import "./shared/container";
 
 const app = express();
@@ -29,6 +33,7 @@ app.use(
 
         return response.status(500).json({
             status: "error",
+
             message: `Internal server error - ${err.message}`,
         });
     }
