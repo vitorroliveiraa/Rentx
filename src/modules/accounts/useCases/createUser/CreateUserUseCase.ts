@@ -1,14 +1,14 @@
-import { hash } from "bcryptjs";
-import { inject, injectable } from "tsyringe";
+import { hash } from 'bcryptjs';
+import { inject, injectable } from 'tsyringe';
 
-import { AppError } from "../../../../errors/AppError";
-import { ICreateUserDTO } from "../../dtos/ICreateUsersDTO";
-import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { AppError } from '../../../../errors/AppError';
+import { ICreateUserDTO } from '../../dtos/ICreateUsersDTO';
+import { IUsersRepository } from '../../repositories/IUsersRepository';
 
 @injectable()
-class CreateCategoryUseCase {
+class CreateUserUseCase {
     constructor(
-        @inject("UsersRepository")
+        @inject('UsersRepository')
         private usersRepository: IUsersRepository
     ) {}
 
@@ -18,10 +18,10 @@ class CreateCategoryUseCase {
         email,
         driver_license,
     }: ICreateUserDTO): Promise<void> {
-        const userAlreadyExists = this.usersRepository.findByEmail(email);
+        const userAlreadyExists = await this.usersRepository.findByEmail(email);
 
         if (userAlreadyExists) {
-            throw new AppError("This email is in use!");
+            throw new AppError('This email is in use!');
         }
 
         const passwordHash = await hash(password, 8);
@@ -35,4 +35,4 @@ class CreateCategoryUseCase {
     }
 }
 
-export { CreateCategoryUseCase };
+export { CreateUserUseCase };
