@@ -1,25 +1,26 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 
-import "express-async-errors";
+import 'express-async-errors';
 
-import express, { Request, Response, NextFunction } from "express";
-import swaggerUi from "swagger-ui-express";
+import express, { Request, Response, NextFunction } from 'express';
+import swaggerUi from 'swagger-ui-express';
 
 // Quando o path termina com nome de pasta, automaticamente pega index
 
-import { AppError } from "./errors/AppError";
-import { router } from "./routes";
-import swaggerFile from "./swagger.json";
+import { AppError } from '@errors/AppError';
 
-import "./database";
+import { router } from './routes';
+import swaggerFile from './swagger.json';
 
-import "./shared/container";
+import './database';
+
+import '@shared/container';
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(router);
 
@@ -32,7 +33,7 @@ app.use(
         }
 
         return response.status(500).json({
-            status: "error",
+            status: 'error',
 
             message: `Internal server error - ${err.message}`,
         });
@@ -40,5 +41,5 @@ app.use(
 );
 
 app.listen(3333, () => {
-    console.log("Started application ⚡");
+    console.log('Started application ⚡');
 });

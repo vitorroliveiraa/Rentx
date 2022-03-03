@@ -1,11 +1,12 @@
-import { AppError } from "../../../../errors/AppError";
-import { CategoriesRepositoryInMemory } from "../../repositories/in-memory/CategoriesRepositoryInMemory";
-import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
+import { AppError } from '@errors/AppError';
+import { CategoriesRepositoryInMemory } from '@modules/cars/repositories/in-memory/CategoriesRepositoryInMemory';
+
+import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 
 let createCategoryUseCase: CreateCategoryUseCase;
 let categoriesRepositoryInMemory: CategoriesRepositoryInMemory;
 
-describe("Create Category", () => {
+describe('Create Category', () => {
     beforeAll(() => {
         categoriesRepositoryInMemory = new CategoriesRepositoryInMemory();
         createCategoryUseCase = new CreateCategoryUseCase(
@@ -13,10 +14,10 @@ describe("Create Category", () => {
         );
     });
 
-    it("Should be able to create a new category", async () => {
+    it('Should be able to create a new category', async () => {
         const category = {
-            name: "Category name test",
-            description: "Category description test",
+            name: 'Category name test',
+            description: 'Category description test',
         };
 
         await createCategoryUseCase.execute({
@@ -28,14 +29,14 @@ describe("Create Category", () => {
             category.name
         );
 
-        expect(categoryCreated).toHaveProperty("id");
+        expect(categoryCreated).toHaveProperty('id');
     });
 
-    it("Should not be able to create a new category with name exists", async () => {
+    it('Should not be able to create a new category with name exists', async () => {
         expect(async () => {
             const category = {
-                name: "Category name test",
-                description: "Category description test",
+                name: 'Category name test',
+                description: 'Category description test',
             };
 
             await createCategoryUseCase.execute({
