@@ -1,2 +1,16 @@
+# Dependencies
 node_modules
+
+# Temp folders/files
+temp
+tmp
+
+# Log files
+*.log
+
+# Environment variables
 .env
+
+# Tests
+coverage
+.swc
