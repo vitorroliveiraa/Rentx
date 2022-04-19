@@ -1,2 +1,20 @@
+# Dependencies
 node_modules
+
+# Temp folders/files
+temp
+tmp
+*.png
+*.jpg
+*.jpeg
+!diagram.png
+
+# Log files
+*.log
+
+# Environment variables
 .env
+
+# Tests
+coverage
+.swc
