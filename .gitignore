@@ -1,1 +1,24 @@
+# Dependencies
 node_modules
+
+# Temp folders/files
+temp
+tmp/*
+!tmp/.gitkeep
+*.png
+*.jpg
+*.jpeg
+!diagram.png
+.vscode
+dist
+ormconfig.json
+
+# Log files
+*.log
+
+# Environment variables
+.env
+
+# Tests
+coverage
+.swc
