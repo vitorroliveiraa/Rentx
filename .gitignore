@@ -3,11 +3,15 @@ node_modules
 
 # Temp folders/files
 temp
-tmp
+tmp/*
+!tmp/.gitkeep
 *.png
 *.jpg
 *.jpeg
 !diagram.png
+.vscode
+dist
+ormconfig.json
 
 # Log files
 *.log
