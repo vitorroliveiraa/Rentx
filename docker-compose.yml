@@ -15,20 +15,24 @@ services:
     volumes:
       - pgdata:/data/postgres
 
-  app:
-    build: .
-    container_name: rentx
-    restart: always
-    env_file:
-      - .env
+  redis:
+    image: redis:alpine
     ports:
-      - 3333:3333
-    volumes:
-      - .:/usr/app
-    links:
-      - database_ignite
-    depends_on:
-      - database_ignite
+      - 6379:6379
+  # app:
+  #   build: .
+  #   container_name: rentx
+  #   restart: always
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - 3333:3333
+  #   volumes:
+  #     - .:/usr/app
+  #   links:
+  #     - database_ignite
+  #   depends_on:
+  #     - database_ignite
 
 volumes:
   pgdata:
